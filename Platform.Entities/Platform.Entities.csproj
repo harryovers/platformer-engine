@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{309E6AA2-87AC-413C-81C6-78E8118FCEB1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Platform.Entities</RootNamespace>
+    <AssemblyName>Platform.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK">
+      <HintPath>..\packages\OpenTK.1.1.1589.5942\lib\NET40\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InventoryItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sprite.cs" />
+    <Compile Include="Sprites\Bot.cs" />
+    <Compile Include="Sprites\Bots\Boss.cs" />
+    <Compile Include="Sprites\Bots\Bosses\Stomper.cs" />
+    <Compile Include="Sprites\Bots\Jumper.cs" />
+    <Compile Include="Sprites\Bots\Charger.cs" />
+    <Compile Include="Sprites\Deathbox.cs" />
+    <Compile Include="Sprites\Bots\Spider.cs" />
+    <Compile Include="Sprites\Deathboxes\Spikes.cs" />
+    <Compile Include="Sprites\Killbox.cs" />
+    <Compile Include="Sprites\PickUp.cs" />
+    <Compile Include="Sprites\PickUps\Checkpoint.cs" />
+    <Compile Include="Sprites\PickUps\DoorKey.cs" />
+    <Compile Include="Sprites\PickUps\PowerUp.cs" />
+    <Compile Include="Sprites\PickUps\PowerUps\DoubleJump.cs" />
+    <Compile Include="Sprites\PickUps\PowerUps\Run.cs" />
+    <Compile Include="Sprites\PickUps\PowerUps\Weapons\BasicWeapon.cs" />
+    <Compile Include="Sprites\PickUps\PowerUps\Weapons\FastWeapon.cs" />
+    <Compile Include="Sprites\PickUps\PowerUps\Weapons\LongWeapon.cs" />
+    <Compile Include="Sprites\PickUps\PowerUps\Weapons\StrongWeapon.cs" />
+    <Compile Include="Sprites\PickUps\PowerUps\Weapon.cs" />
+    <Compile Include="Sprites\PickUps\Star.cs" />
+    <Compile Include="Sprites\PickUps\Token.cs" />
+    <Compile Include="Sprites\Player.cs" />
+    <Compile Include="Sprites\Static.cs" />
+    <Compile Include="Sprites\Statics\Block.cs" />
+    <Compile Include="Sprites\Statics\Blocks\BossBoundry.cs" />
+    <Compile Include="Sprites\Statics\Blocks\BotBoundry.cs" />
+    <Compile Include="Sprites\Statics\Blocks\Breakable.cs" />
+    <Compile Include="Sprites\Warp.cs" />
+    <Compile Include="Sprites\Warps\Door.cs" />
+    <Compile Include="Sprites\Warps\Doors\DownDoor.cs" />
+    <Compile Include="Sprites\Warps\Doors\LeftDoor.cs" />
+    <Compile Include="Sprites\Warps\Doors\RightDoor.cs" />
+    <Compile Include="Sprites\Warps\Doors\UpDoor.cs" />
+    <Compile Include="SpriteType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TK\TK\TK.csproj">
+      <Project>{5b48bee2-bdc7-498a-bb8a-87f35e7e7c9f}</Project>
+      <Name>TK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Platform.Core\Platform.Core.csproj">
+      <Project>{a4d56df3-6477-4f1b-8c20-8d62fa704662}</Project>
+      <Name>Platform.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Platform.Maths\Platform.Maths.csproj">
+      <Project>{cf8ed71d-4f0a-44ba-86ab-2d42b1444620}</Project>
+      <Name>Platform.Maths</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Platform.Physics\Platform.Physics.csproj">
+      <Project>{400ac042-1076-4b4a-9b7b-bc651c1c1dc2}</Project>
+      <Name>Platform.Physics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
